@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-mhw0s2');
+	src:url('fonts/icomoon.eot?#iefix-mhw0s2') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-mhw0s2') format('woff'),
+		url('fonts/icomoon.ttf?-mhw0s2') format('truetype'),
+		url('fonts/icomoon.svg?-mhw0s2#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bag:before {
+	content: "\e600";
+}
+.icon-checklist:before {
+	content: "\e601";
+}
+.icon-deliverly:before {
+	content: "\e602";
+}
+.icon-fb:before {
+	content: "\e603";
+}
+.icon-location:before {
+	content: "\e606";
+}
+.icon-telephone:before {
+	content: "\e60b";
+}
+.icon-time_header:before {
+	content: "\e60d";
+}
+.icon-vk:before {
+	content: "\e60f";
+}
+.icon-world:before {
+	content: "\e613";
+}
+.icon-uniF189:before {
+	content: "\f189";
+}
+.icon-uni:before {
+	content: "\f00c";
+}
+.icon-ok:before {
+	content: "\e800";
+}
+.icon-gear:before {
+	content: "\e63a";
+}
+.icon-phone:before {
+	content: "\e608";
+}
+.icon-close:before {
+	content: "\e610";
+}
+.icon-ampersand:before {
+	content: "\e607";
+}
+.icon-twitter:before {
+	content: "\ea91";
+}
