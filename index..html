@@ -4,7 +4,6 @@
 	<title>SushiKing</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.ikSelect.min.js"></script>
@@ -18,7 +17,7 @@
 <div class="wrapper">
 	<div class="all">
 		<header>
-			<div class="top-header-info main-width">
+			<div class="top-header-info main-width" data-body-content='btn-2'>
 				<div class="city-buttons">
 					<a href="">Нарва</a>
 					<a href="" class="active">Пярну</a>
@@ -41,7 +40,7 @@
 					<div>P - N : 11:00 - 23:00</div>
 					<div>R - L : 11:00 - 24:00</div>
 				</div>
-				<div class="logo">
+				<div class="logo-mobile">
 					<a href="">
 						<img src="images/logo.png" alt="">
 					</a>
@@ -49,12 +48,12 @@
 			</div>
 			<div class="main-header">
 				<div class="main-width">
-					<div class="nav-btn">
+					<div class="nav-btn" data-body-btn='btn-1'>
 						<div></div>
 						<div></div>
 						<div></div>
 					</div>
-					<div class="btn-header-info">
+					<div class="btn-header-info" data-body-btn='btn-2'>
 						<div class="icon icon-gear"></div>
 					</div>
 					<div class="logo">
@@ -62,10 +61,10 @@
 							<img src="images/logo.png" alt="">
 						</a>
 					</div>
-					<nav class="main-menu clearfix">
+					<nav class="main-menu clearfix" data-body-content='btn-1'>
 						
 						<ul>
-							<li>
+							<li class="current-menu-item">
 								<a href="">главная</a>
 							</li>
 							<li>
@@ -73,32 +72,106 @@
 							</li>
 							<li>
 								<a href="">меню</a>
-								<ul class="sub-menu">
-									<li>
-										<a href="">
-											<div class="menu_img">
-												<img src="images/menu_1.jpg" alt="">
-											</div>
-											Нигири суши
-										</a>
-									</li>
-									<li>
-										<a href="">
-											<div class="menu_img">
-												<img src="images/menu_2.jpg" alt="">
-											</div>
-											Ганкан суши
-										</a>
-									</li>
-									<li>
-										<a href="">
-											<div class="menu_img">
-												<img src="images/menu_3.jpg" alt="">
-											</div>
-											Инари
-										</a>
-									</li>
-								</ul>
+								<div class="sub-menu-wrap">
+									<ul class="sub-menu">
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_1.jpg" alt="">
+												</div>
+												<span>Нигири суши</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_2.jpg" alt="">
+												</div>
+												<span>Ганкан суши</span>
+											</a>
+										</li>
+										<li class="current-menu-item">
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_3.jpg" alt="">
+												</div>
+												<span>Инари</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_4.jpg" alt="">
+												</div>
+												<span>Закуски</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_5.jpg" alt="">
+												</div>
+												<span>Маки</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_6.jpg" alt="">
+												</div>
+												<span>Острые маки</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_7.jpg" alt="">
+												</div>
+												<span>Темаки</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_8.jpg" alt="">
+												</div>
+												<span>Сашими</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_9.jpg" alt="">
+												</div>
+												<span>Ассорти</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_10.jpg" alt="">
+												</div>
+												<span>Салаты</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_11.jpg" alt="">
+												</div>
+												<span>Супы</span>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<div class="menu_img">
+													<img src="images/menu_goods_12.jpg" alt="">
+												</div>
+												<span>Напитки</span>
+											</a>
+										</li>
+									</ul>
+								</div>
 							</li>
 							<li>
 								<a href="">доставка</a>
@@ -111,21 +184,109 @@
 							</li>
 						</ul>
 					</nav>
-					<div class="basket">корзина<br><div class="sircle-sum">12</div>
-						<div class="few-basket">
-							<div>
-								<span>Выбранные товары:</span>
-								<span>12</span>
+					<div class="basket">
+						<div class="basket-btn-desktop"></div>
+						<div class="basket-btn" data-body-btn='btn-3' data-body-right>
+							корзина<br><div class="sircle-sum">12</div>
+						</div>
+						<div class="few-basket" data-body-content='btn-3'>
+							<div class="content-basket-mobile">
+								<h5 class="title-basket-mobile">
+									корзина (12)
+								</h5>
+								<h6 class="title-basket-mobile">
+									выбранные товары:
+								</h6>
+								<ul class="basket-item">
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_1.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_2.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_3.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_4.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_5.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_6.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+									<li>
+										<div class="menu_img_basket">
+											<img src="images/menu_goods_7.jpg">
+										</div>
+										<div class="menu_content_basket">
+											<input class="basket-input" type="text" value="2">
+											<span>12.70€</span>
+										</div>
+									</li>
+								</ul>
+								<div class="finish-basket">
+									<span>итого:</span>
+									<span>82.60€</span>
+								</div>
 							</div>
-							<div>
-								<span>Итого:</span>
-								<span>34.50€</span>
+							<ul class="few-basket-item">
+								<li>
+									<span>Выбранные товары:</span>
+									<span>12</span>
+								</li>
+								<li>
+									<span>Итого:</span>
+									<span>34.50€</span>
+								</li>
+							</ul>
+							<div class="text-center">
+								<a class="btn btn-primary" href="">Перейти к оформлению</a>
 							</div>
-						
+							<div class="text-center">
+								<a class="logo-basket" href="">
+									<img src="images/logo.png">
+								</a>
+							</div>
 						</div>
 					</div>
-					
-				</div>
 
 			</div>
 		</header>
@@ -153,17 +314,90 @@
 	        </div>
 		</div>
 		<div class="main-width">
-			<section class="">
-				<h1 class="h2 title-style">Наш ассортимент:</h1>
-				<div class="wrap-goods">
-					<a class="block-goods" href="">
-						<img src="images/goods_1.jpg" alt="">
-					</a>
+			<div class="two-column">
+				<div class="left-column">
+					<section>
+					<h1 class="h2 title-style">Наш ассортимент:</h1>
+					<ul class="wrap-goods">
+						<li>
+							<a href="">
+								<img src="images/goods_1.jpg" alt="">
+								<h4>Нигири суши <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_2.jpg" alt="">
+								<h4>Гункан суши <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_3.jpg" alt="">
+								<h4>Инари <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_4.jpg" alt="">
+								<h4>Закуски <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_5.jpg" alt="">
+								<h4>Маки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_6.jpg" alt="">
+								<h4>Острые Маки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_7.jpg" alt="">
+								<h4>Темаки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_8.jpg" alt="">
+								<h4>Сашими <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_9.jpg" alt="">
+								<h4>Ассорти <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_10.jpg" alt="">
+								<h4>Салаты <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_11.jpg" alt="">
+								<h4>супы <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/goods_12.jpg" alt="">
+								<h4>Напитки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
+							</a>
+						</li>
+					</ul>
+					</section>
 				</div>
-			</section>
-			<aside>
-				
-			</aside>
+				<div class="right-column">
+
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,5 +1,16 @@
 $(document).ready(function(){
 
+// hasAttr
+///////////////////////////////////////
+
+	$.fn.hasAttr = function(name) {
+   		return this.attr(name) !== undefined;
+	};
+
+// END hasAttr
+///////////////////////////////////////
+
+
 // SWIPER
 ///////////////////////////////////////
 
@@ -39,156 +50,198 @@ $(document).ready(function(){
 
 
 
-// ISOTOPE
-///////////////////////////////////////
-
-
-	/*$(".nav-btn").click(function(){
-  		$(".main-menu").toggleClass("main-menu-open");
-	});*/
-
-
-
-/*$(window).load(function(){
-
-    resizeIsoyope();
-    resizeIsoyope2();
-
-});
-
-function resizeIsoyope2(){
-
-	$(window).resize(function(){
-
-	    resizeIsoyope();
-
-	});
-	
-}
-
-function resizeIsoyope(){
-	 var $container = $('.isotope');
-    $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
-}*/
-
-// END ISOTOPE
-///////////////////////////////////////
-
-
 // HEADER BUTTON MENU
 ///////////////////////////////////////
 
+	function resiseFunBody(){
 
-	function hederButton(){
-		if($('.button-menu').hasClass('open-menu')){
-		
-			var bodyHeight = $('body').height();
-			bodyWidth = $('body').outerWidth();
-			wrapMenu = $('.wrapper-main-nav').width();
-			$('.wrapper, .footer-main').width(bodyWidth);
-			$('.wrapper-main-nav').height(bodyHeight).css({'right': '100%', 'left': 'auto'});
-
-			$('body').animate({
-				'padding-left': wrapMenu,
-			}, 600);
-		}
-	}
-
-	function menuOpen(){
-		hederButton();
-		$('body').animate({
-			'padding-left': wrapMenu,
-		}, 600);
-	}
-
-	function resizeMenu(){
 		$(window).resize(function(){
-			hederButton();
-			$('.wrapper, .footer-main').width(bodyWidth);
 
-			$('body').stop().css({
-				'padding-left': wrapMenu,
-			});
+			if($('[data-body-content="' + dataBodyAttr + '"]').hasClass('open-menu')){
+
+				var bodyWidth = $('body').outerWidth();
+				var widthButton = thisButton.outerWidth();
+				var paddingLeftBody = bodyWidth - widthButton + 'px';
+				bodyHeight = $('body').outerHeight();
+
+
+				$('body > .wrapper').width(bodyWidth);
+
+				$('.open-menu').height(bodyHeight);
+
+				
+
+
+				if(thisButton.hasAttr('data-body-right')){
+
+					paddingDirection = '0 ' + paddingLeftBody + ' 0 0';
+
+					$('body').stop().css({
+						'padding': paddingDirection
+					});
+
+					console.log(paddingDirection);
+
+
+				}else{
+
+					paddingDirection = '0px 0px 0px ' + paddingLeftBody;
+
+					$('body').stop().css({
+						'padding': paddingDirection
+					});
+
+					console.log(paddingDirection);
+
+
+				}
+
+			}
+
 		});
-	}
 
-
-	function closeMenu(){
-		$('body').stop().animate({
-			'padding-left': 0,
-		}, 600, menuClose);
-		function menuClose(){
-			bodyWidth = 'auto';
-			wrapMenu = 0;
-			resizeMenu();
-			$('.background-body').remove();
-			$('body').removeClass('footer-bottom');
-			$('html').removeClass('body-overflow')
-			$('.button-menu').removeClass('open-menu');
-			$('.wrapper-main').css('height', 'auto');
-			$('.wrapper-main-nav').outerHeight(0);
-			return false
-		}
 	}
 
 
 
-	$('.button-menu').click(function(){
-		
-		if($('.button-menu').hasClass('open-menu')){
+	function bodyMovement(){
 
-			closeMenu();
+		if($('[data-body-content="' + dataBodyAttr + '"]').hasClass('open-menu')){
+
+			$('body').stop().animate({
+
+				'padding': 0
+
+			}, function(){
+
+				$('body').removeClass('overflow-hidden').removeClass('body-right');;
+				$('body > .wrapper').width('auto');
+				$('[data-body-content="' + dataBodyAttr + '"]').removeClass('open-menu');
+
+			});
+
+			if ($('[data-body-content="btn-2"]').hasClass('open-menu')){
+				$('.nav-btn').removeClass('hide-btn');
+			}
 
 		}else{
+			
 
-			$(this).addClass('open-menu');
-			if($('.background-body').length === 0){
-				$('.wrapper').append('<div class="background-body"></div>').click();
-				$('html').addClass('body-overflow');
+			$('body').addClass('overflow-hidden');
+			$('body > .wrapper').width(bodyWidth);
+			$('[data-body-content="' + dataBodyAttr + '"]').addClass('open-menu');
+			$('.open-menu').height(bodyHeight);
+			
+
+
+			$('body').stop().animate({
+				'padding': paddingDirection
+			});
+
+			if ($('[data-body-content="btn-2"]').hasClass('open-menu')){
+				$('.nav-btn').addClass('hide-btn');
 			}
 
 
 
-			bodyClose();
-			hederButton();
-			resizeMenu();
-			
+			resiseFunBody();
 
 		}
 
-		return false
-	});
-
-
-	$('.close-nav-main').click(function(){
-
-		closeMenu();
-
-		return false
-
-	});
-
-
-	function bodyClose(){
-
-		$('.background-body').on('click', function(){
-
-			closeMenu();
-
-		});
-		
 	}
+
+
+
+	$('[data-body-btn]').click(function(){
+
+		dataBodyAttr = $(this).attr('data-body-btn');
+		thisButton = $(this);
+		bodyWidth = $('body').outerWidth();
+		bodyHeight = $('body').outerHeight();
+		widthButton = thisButton.outerWidth();
+		paddingLeftBody = bodyWidth - widthButton + 'px';
+
+
+		if(thisButton.hasAttr('data-body-right')){
+
+			paddingDirection = '0 ' + paddingLeftBody + ' 0 0';
+			$('body').addClass('body-right');
+			bodyMovement();
+
+		}else{
+
+			paddingDirection = '0 0 0 ' + paddingLeftBody;
+			bodyMovement();
+
+		}
+		
+
+	});
 
 
 // END HEADER BUTTON MENU
 ///////////////////////////////////////
+
+
+
+// HEADER SUBMENU
+///////////////////////////////////////
+	
+	
+	$('.main-menu .sub-menu-wrap').prev().click(function(){
+
+		var thisSubMenu = $(this);
+
+		if(thisSubMenu.parent().hasClass('open-submenu')){
+
+
+			thisSubMenu.parent().removeClass('open-submenu');
+			thisSubMenu.next().stop().animate({
+
+				height: '4px'
+
+			}, 400, function() {
+
+				thisSubMenu.next().css({
+
+					height: '0px'
+
+				});
+
+	  		});
+
+		}else {	
+
+			thisSubMenu.parent().addClass('open-submenu');
+			var heightSubMenu = thisSubMenu.next().children().outerHeight();
+			thisSubMenu.next().stop().css({
+				height: '4px'
+			}).animate({
+				height: heightSubMenu
+			}, 400);
+
+		}
+
+		return false
+
+	});
+	
+
+
+// END HEADER SUBMENU
+///////////////////////////////////////
+
+
+// DROPDOWN DESCTOP BASKET
+///////////////////////////////////////
+
+	$('.basket-btn-desktop').click(function(){
+		$('.few-basket').fadeToggle(200);
+	});
+
+// END DROPDOWN DESCTOP BASKET
+///////////////////////////////////////
+
 
 
 

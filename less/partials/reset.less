@@ -1,40 +1,5 @@
-/*global style*/
-@padding-mobile: 4px;
-@main-width: 1272px;
-@padding-mobile-percent: (@padding-mobile * 100%) / 320px;
-
-
-// formula media width
-@padding-media-active: (@main-width * 100%) / (100% - @padding-mobile-percent - @padding-mobile-percent);
-
-
-/*main{
-	padding-left: @padding-mobile-percent;
-	padding-right: @padding-mobile-percent;
-}*/
-
-
-@media ( min-width: 1051px){
-	.main-width{
-		max-width: @main-width;	
-		margin: auto;
-	}
-	main{
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-
-
-/*end global style*/
-
 @base-px: 16;
 @toRems: (1 / @base-px) + 0rem;
-
-html{
-	font-size: 16px;
-}
 
 *{
 	.box-sizing();

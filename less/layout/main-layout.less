@@ -1,9 +1,3 @@
-html{
-	font-size: @base-px;
-	line-height: 16 * @toRems;
-	color: #6b6b6b;
-	font-family: 'PT Sans Narrow';
-}
 html, body{
 	height: 100%;
 }
@@ -23,7 +17,6 @@ body{
 }
 .all{
 	padding-bottom: 46 * @toRems;
-	overflow: hidden;	
 }
 .title-style{
 	text-transform: uppercase;
@@ -34,45 +27,114 @@ body{
 	margin: 10px 0;
 }
 
-.block-goods{
-	width: 33.3%;
-	display: inline-block;
-	.box-shadow(0 0 5px rgba(0, 0, 0, 0.05));
-}
-
-
-
-
-
-
-
 
 .shadow{
 	.box-shadow(0 0 5px rgba(0, 0, 0, 0.05));
 }
 
-
-
-
-
-
-
 .pull-right{
 	float: right !important;
 }
 
+.triangle-wrap {
+	position: absolute;
+	left: -6px;
+	right: -6px;
+	bottom: 100%;
+}
+.triangle {
+	position: relative;
+	padding-top: (26 / 270) * 100%;
+	overflow: hidden;
 
+	&:after {
+		content: " ";
+		display: block;
+		height: 100%;
+		.skew(0, -5deg);
+		background: #fff;
+		position: absolute;
+		top: 50%;
+		.box-shadow(0 0 3px rgba(0, 0, 0, 0.1));
+		left: 0;
+		width: 100%;
+		.transition(0.2s);
+	}
+}
 
+.wrap-goods {
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+	margin: 0 -15px;
+	li {
+		float: left;
+		padding: 15px;
+		width: 33.3%;
+	}
+	a {
+		padding-top: 100%;
+		background: #fff;
+		height: 0;
+		display: block;
+		border: 6px solid #fff;
+		.transition(0.2s);
+		position: relative;
+		.box-shadow(0 0 3px rgba(0, 0, 0, 0.1));
+		&:hover {
+			border-color: #e94025;
+			.triangle {
+				&:after {
+					background: #e94025;
+				}
+			}
+			h4 {
+				background: #e94025;
+				color: #fff;
+			}
+		}
+	}
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		max-width: 100%;
+		display: block;
+		max-height: 100%;
+		z-index: 1;
+	}
+	h4	{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		font-size: 20px;
+		color: #e94025;
+		text-transform: uppercase;
+		left: 0;
+		background: #fff;
+		margin: 0;
+		padding: 8px;
+		z-index: 2;
+		text-align: center;
+		.transition(0.2s);
+	}
+}
 
+.two-column {
+	.clearfix;
+}
 
-
-
-
-
-
-
-
-
+.left-column {
+	float: left;
+	width: 75%;
+}
+.right-column {
+	float: left;
+	width: 75%;
+}
 
 
 
