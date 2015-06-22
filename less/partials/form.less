@@ -1,21 +1,47 @@
 .placeholdr { color: gray }
 .form-control{
-	border: 1px solid transparent;
-	background: #ffffff;
-	font-size: 16px;
+	border: 1px solid #e2e2e2;
+	background: #fff;
+	font-size: 18px;
 	font-weight: 400;
 	color: #000000;
-	padding: (4 / 15) * 0em 10px;
+	padding: 6px 10px;
 	display: block;
 	width: 100%;
 	.transition(0.2s);
 	font-family: 'PT Sans Narrow';
+	.ik_select {
+		width: 100% !important;
+		height: 100%;
+		padding: 0;
+		.ik_select_link{
+			height: 100%;
+			.box-shadow(none);
+			font-size: 18px;
+			color: #000;
+			padding: 10px;
+		}
+		.ik_select_link_focus {
+			border-color: #ff9a22;
+		}
+	}
+	&.form-control-select{
+		padding: 0;
+		margin-bottom: 18px;
+		border: none;
+		height: 42px;
+	}
+	&:focus {
+		border-color: #ff9a22;
+	}
 }
 input.form-control{
-	height: 35px;
+	height: 42px;
 	margin-bottom: 18px;
 
 }
+
+
 
 textarea.form-control{
 	height: 141px;
@@ -100,5 +126,39 @@ textarea.form-control{
 			margin: -4px 0 0 -4px;
 			width: 8px;
 		}
+	}
+}
+
+
+.checkbox-style {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-top: -2px;
+	text-align: center;
+	input {
+		display: none;
+		&:checked {
+			+ label {
+				border-color: #ff8a00;
+				color: #ff8a00;
+				.icon{
+				 	opacity: 1;
+				}
+			}
+		}
+	}
+	.icon{
+	 	opacity: 0;
+	 	font-size: 25px;
+	 }
+	label{
+		height: 33px;
+		width: 33px;
+		border: 2px solid #cacaca;
+		display: block;
+		.border-radius(5px);
+		cursor: pointer;
+		position: relative;
 	}
 }

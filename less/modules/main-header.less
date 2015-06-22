@@ -241,7 +241,8 @@
 	overflow: hidden;
 	padding-top: 9px;
 	.icon{
-		font-size: 29px;
+		font-size: 26px;
+		vertical-align: middle;
 	}
 	>div{
 		float: right;
@@ -250,7 +251,7 @@
 }
 header{
 	position: relative;
-	z-index: 3;
+	z-index: 14;
 }
 .city-buttons{
 	a{
@@ -275,6 +276,10 @@ header{
 	a{
 		float: right;
 	}
+
+}
+.mail .icon {
+	color: #f0552d;
 }
 .phone{
 	display: inline-block;
@@ -366,10 +371,10 @@ header{
 	margin-right: 15px;
 	vertical-align: top;
 }
-.icon-ampersand{
+.icon-mail{
 	margin-right: 16px;
 }
-.icon-time_header{
+.icon-time{
 	margin-right: 4px;
 }
 .nav-btn{
@@ -390,7 +395,7 @@ header{
 	cursor: pointer;               
 	display: none;
 	float: left;
-	.icon-gear{
+	.icon-settings{
 		color: #f0552d;
 		font-size: 46px;
 	}
@@ -483,7 +488,12 @@ header{
 	}
 }
 
+
 @media(max-width: 1190px){
+	header .main-width {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	.mode{
 		font-size: 16px;
 	}
@@ -522,7 +532,32 @@ header{
 		}
 	}
 }
+@media(min-width: 1041px){
+	.top-header-info {
+		height: auto !important;
+	}
+	.wrapper {
+		width: auto !important;
+	}
+	body {
+		padding: 0 !important;
+	}
+}
 @media(max-width: 1040px){
+	header {
+		z-index: 32;
+	}
+	.overflow-hidden .wrapper:after {
+		content: " ";
+		display: block;
+		position: absolute;
+		top: 0;
+		background: rgba(0, 0, 0, 0.6);
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 30;
+	}
 	[data-body-content]{
 		display: none;
 		overflow: auto;
@@ -551,7 +586,7 @@ header{
 			height: 100%;
 		}
 	}
-	.main-menu{
+	.main-menu:not(.menu-sidebar){
 		font-size: 13.5px;
 		padding-left: 85px;
 		width: 100%;
@@ -656,7 +691,7 @@ header{
 		line-height: 36px;
 
 	}
-	.top-header-info{
+	header .top-header-info{
 		position: absolute;
 		top: 0;
 		right: 100%;
@@ -862,7 +897,7 @@ header{
 	.btn-header-info {
 		padding: 12px;
 	}
-	.btn-header-info .icon-gear {
+	.btn-header-info .icon-settings {
 		font-size: 35px;
 	}
 	.nav-btn {
@@ -887,11 +922,11 @@ header{
 		left: 120px;
 		right: 74px;
 	}
-	.main-menu {
+	.main-menu:not(.menu-sidebar) {
 		font-size: 9px;
 		padding-left: 50px;
 	}
-	.top-header-info {
+	header .top-header-info {
 		font-size: 9px;
 		padding-left: 50px;
 	}
@@ -912,7 +947,7 @@ header{
 	.btn-header-info {
 		padding: 10px;
 	}
-	.btn-header-info .icon-gear {
+	.btn-header-info .icon-settings {
 		font-size: 28px;
 	}
 	.nav-btn {
@@ -938,11 +973,11 @@ header{
 		left: 98px;
 		right: 69px;
 	}
-	.main-menu {
+	.main-menu:not(.menu-sidebar) {
 		font-size: 7.5px;
 		padding-left: 38px;
 	}
-	.top-header-info {
+	header .top-header-info {
 		font-size: 7.5px;
 		padding-left: 38px;
 	}

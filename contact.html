@@ -9,6 +9,103 @@
 	<script type="text/javascript" src="js/jquery.ikSelect.min.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+
+	<script>
+
+
+
+
+
+
+
+function initialize() {
+
+var map;
+var myLatlng = new google.maps.LatLng(59.436135, 24.751971);
+ 
+var MY_MAPTYPE_ID = 'mystyle';
+
+
+
+var stylez =  [
+  {
+    featureType: "#00ff00",
+    elementType: "#00ff00",
+    stylers: [
+      { visibility: "on" },
+      { hue: "#00ff00" },
+      { saturation: -100 },
+      { lightness: +10 }
+    ]
+  },{
+    featureType: "#00ff00",
+    elementType: "#00ff00",
+    stylers: [
+      { visibility: "on" },
+      { hue: "#00ff00" },
+      { saturation: -100 },
+      { lightness: +10 }
+    ]
+  }
+];
+
+
+
+var myOptions = {
+	zoom: 16,
+	scrollwheel: false,
+	center: myLatlng,
+	mapTypeControlOptions: {
+		mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+	},
+	mapTypeId: MY_MAPTYPE_ID
+}
+var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+var markerImage = new google.maps.MarkerImage(
+    'images/marker.png',
+    new google.maps.Size(58,79),
+    new google.maps.Point(0,0),
+    new google.maps.Point(0,0)
+);
+
+
+var marker = new google.maps.Marker({
+  icon: markerImage,
+  position: myLatlng,
+  map: map,
+  title:"Google Maps!"
+});
+
+
+
+ 
+
+
+  var styledMapOptions = {
+    name: "Мой стиль"
+  };
+ 
+  var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
+ 
+  map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
+
+
+
+
+}
+
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
+    </script>
 	<!--[if lte IE 10]>
 		<script type="text/javascript" src="js/ie.js"></script>
 	<![endif]-->
@@ -290,326 +387,42 @@
 
 			</div>
 		</header>
-		<div class="swiper-container swiper-container-main clearfix">
-	        <div class="swiper-wrapper">
-	            <div class="swiper-slide">
-	            	<img src="images/slider_1.jpg" alt="">
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="images/slider_2.jpg" alt="">
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="images/slider_3.jpg" alt="">
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="images/slider_4.jpg" alt="">
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="images/slider_5.jpg" alt="">
-	            </div>
-	        </div>
-	        <div class="wrap-swiper-pagination">
-	        	<div class="swiper-pagination"></div>
-	        </div>
-	        <div class="swiper-button-prev"><i class="icon icon-left"></i></div>
-	        <div class="swiper-button-next"><i class="icon icon-right"></i></div>
-		</div>
-		<div class="swiper-auto-next-main"></div>
-		<div class="main-width">
-			<div class="two-column">
-				<div class="left-column">
-					<section>
-					<h1 class="h2 title-style">Наш ассортимент:</h1>
-					<ul class="wrap-goods wrap-goods-index">
-						<li>
-							<a href="">
-								<img src="images/goods_1.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Нигири суши <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_2.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Гункан суши <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_3.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Инари <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_4.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Закуски <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_5.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Маки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_6.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Острые Маки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_7.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Темаки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_8.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Сашими <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_9.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Ассорти <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_10.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Салаты <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_11.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>супы <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="images/goods_12.jpg" alt="">
-								<div class="title-goods-wrap">
-									<h4>Напитки <div class="triangle-wrap"><div class="triangle"></div></div></h4>
-								</div>
-							</a>
-						</li>
-					</ul>
-					</section>
-				</div>
-				<div class="right-column">
-					<aside class="products-action shadow">
-						<div class="alert-action">
-							<i class="icon icon-attention"></i>
-							Не упусти момент:
-							<div class="action-triangle-wrap"><div class="action-triangle"></div></div>
-						</div>
-						<div class="action-product">
-							<i class="icon icon-new action-icon"></i>
-							<img src="images/product1.jpg">
-						</div>
-						<div class="wrap-name-product">
-							<div class="name-product">
-								<div>ОСТРАЯ ТИГРОВАЯ КРИВЕТКА</div>
-							</div>
-							<div class="sum">
-								<div class="old-sum">10.90€</div>
-								<div class="new-sum">/ 6.70€</div>
-							</div>
-						</div>
-						<div class="end-action">
-							<div class="end-action-text">
-								Осталось до конца акции
-							</div>
-							<div class="timer">
-								<span class="hours">23</span> : <span class="minutes">59</span> : <span class="seconds">28</span>
-							</div>
-						</div>
-						<div class="action-product">
-							<i class="icon icon-discount action-icon"></i>
-							<img src="images/product2.jpg">
-						</div>
-						<div class="wrap-name-product">
-							<div class="name-product">
-								<div>
-									MIRUDO
-								</div>
-							</div>
-							<div class="sum">
-								<div class="old-sum">10.90€</div>
-								<div class="new-sum">/ 6.70€</div>
-							</div>
-						</div>
-						<div class="end-action">
-							<div class="end-action-text">
-								Осталось до конца акции
-							</div>
-							<div class="timer">
-								<span class="hours">02</span> : <span class="minutes">59</span> : <span class="seconds">42</span>
-							</div>
-						</div>
-					</aside>
-					<aside class="accordion-wrap">
-						<div class="accordion">
-							<div class="accordion-title">
-								Новинки в нашем меню <i class="arrow"></i>
-							</div>
-							<div class="accordion-content">
-								<img src="images/img.jpg">
-								<img src="images/img.jpg">
-								<div class="title-sum">
-									<div>AMERIKA</div>
-									<div class="new-sum">7.20€</div>
-								</div>
-								<img src="images/img.jpg">
-								<div class="see-all">
-									<a href="">посмотреть все товары</a>
-								</div>
-							</div>
-						</div>
-						<div class="accordion open">
-							<div class="accordion-title">
-								Самые популярные <i class="arrow"></i>
-							</div>
-							<div class="accordion-content">
-								<img src="images/img.jpg">
-								<img src="images/img.jpg">
-								<div class="title-sum">
-									<div>AMERIKA</div>
-									<div class="new-sum">7.20€</div>
-								</div>
-								<img src="images/img.jpg">
-								<div class="see-all">
-									<a href="">посмотреть все товары</a>
-								</div>
-							</div>
-						</div>
-					</aside>
-				</div>
-			</div>
-		</div>
-		<section class="background-block hidden-sm" style="background-image: url(images/backgroung1.jpg)">
-			<div class="main-width clearfix">
-				<div class="smartphone-left">
-					<div class="smartphone-left-content">
-						<h3 class="smartphone-left-title">
-							<span class="red">Sushiking</span> <br> теперь и на сматрфоне
-						</h3>
-						<div class="qr-content">
-							<p>Это быстро и удобно - телефон всегда при себе, а значит и суши тоже!</p>
-						</div>
-						<img src="images/gr.jpg">
-					</div>
-					<div class="smartphone-left-bg">
-						<div class="angle angle-top angle-left"></div>
-						<div class="angle angle-top angle-right"></div>
-						<div class="angle angle-bottom angle-right"></div>
-						<div class="angle angle-bottom angle-left"></div>
- 					</div>
-				</div>
-				<div class="smartphone-right">
-					<h3 class="smartphone-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> <span class="yellow">Nulla feugiat libero a consequat mollis.</span></h3>
-					<div class="smartphone-content">
-						<p>Morbi venenatis erat quis metus aliquet rhoncus. Cras blandit velit sed tellus condimentum feugiat. Fusce iaculis id sem id elementum. Vivamus consectetur erat sit amet leo euismod, non mattis purus interdum. Sed varius, augue vel tristique tristique, diam orci scelerisque orci, non pulvinar neque ante quis dolor. Etiam porttitor, ipsum at lobortis elementum, est mauris suscipit augue, et suscipit arcu ligula placerat diam.</p>
-					</div>
-					<div class="info-block">
-						narva@sushiking.ee <br>
-						<span class="yellow">+372 5622 2440</span>
-					</div>
-					<img src="images/smartphone-img.png" class="smartphone-img">
-				</div>
-			</div>
-		</section>
-		<section class="section-column">
+		<section class="section-column contact-section">
 			<div class="main-width">
 				<div class="row">
 					<div class="span6">
-						<h3 class="title-style">Последние новости:</h3>
-						<section class="section-news">
-							<a class="one-news" href="">
-								<div class="img-news">
-									<img src="images/news-one.jpg">
-									<div class="news-triangle-wrap"><div class="news-triangle"></div></div>
-								</div>
-								<div class="news-content">
-									<div class="section-news-one">
-										<h2 class="red title-news">В МЕНЮ ПОЯВИЛИСЬ СУПЫ!</h2>
-										<div class="text-news">
-											<p>Дорогой клиент, В нашем меню очередное пополнение! На этот раз это 4 классических японских супа. Приятного аппетита!...</p>
-										</div>
-									</div>
-									<div class="footer-news">
-										<span class="read">Прочитать эту новость...</span>	
-										<div class="data-news">27.05.2015</div>
-									</div>
-								</div>
-							</a>
-							<a class="one-news" href="">
-								<div class="img-news">
-									<img src="images/news-one.jpg">
-									<div class="news-triangle-wrap"><div class="news-triangle"></div></div>
-								</div>
-								<div class="news-content">
-									<div class="section-news-one">
-										<h2 class="red title-news">В МЕНЮ ПОЯВИЛИСЬ СУПЫ!</h2>
-										<div class="text-news">
-											<p>Дорогой клиент, В нашем меню очередное пополнение! На этот раз это 4 классических японских супа. Приятного аппетита!...</p>
-										</div>
-									</div>
-									<div class="footer-news">
-										<span class="read">Прочитать эту новость...</span>
-										<div class="data-news">27.05.2015</div>
-									</div>
-								</div>
-							</a>
-							<a class="one-news" href="">
-								<div class="img-news">
-									<img src="images/news-one.jpg">
-									<div class="news-triangle-wrap"><div class="news-triangle"></div></div>
-								</div>
-								<div class="news-content">
-									<div class="section-news-one">
-										<h2 class="red title-news">В МЕНЮ ПОЯВИЛИСЬ СУПЫ!</h2>
-										<div class="text-news">
-											<p>Дорогой клиент, В нашем меню очередное пополнение! На этот раз это 4 классических японских супа. Приятного аппетита!...</p>
-										</div>
-									</div>
-									<div class="footer-news">
-										<span class="read">Прочитать эту новость...</span>
-										<div class="data-news">27.05.2015</div>
-									</div>
-								</div>
-							</a>
-						</section>
+						<h3 class="title-style">Наши контакты:</h3>
+						<ul class="contact-item">
+							<li>
+								<i class="icon icon-world"></i>
+								<h4>Sushi King OÜ</h4>
+								<p>Reg. 12327806</p>
+							</li>
+							<li>
+								<i class="icon icon-marker"></i>
+								<h4>Aadress</h4>
+								<p>Tallinna mnt. 12, 20304, Narva, Eesti.</p>
+							</li>
+							<li>
+								<i class="icon icon-telephone"></i>
+								<h4>Telefon:</h4>
+								<p>(+372) 56 222 440</p>
+							</li>
+							<li>
+								<i class="icon icon-mail"></i>
+								<h4>E-mail:</h4>
+								<p>
+									<a href="">narva@sushiking.ee</a> <br>
+									<a href="">info@sushiking.ee</a>
+								</p>
+							</li>
+						</ul>
+						<img src="images/contact-page.png" class="contact-img">
 					</div>
 					<div class="span6">
-						<h3 class="title-style">Наша доставка:</h3>
-						<div class="delivery">
-							<img src="images/delivery.jpg">
-						</div>
+						<h3 class="title-style">Где мы находимся?</h3>
+						<div id="map-canvas"></div>
+
 					</div>
 				</div>
 			</div>
